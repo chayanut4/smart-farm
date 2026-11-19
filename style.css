@@ -1,0 +1,70 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff6f3;
+}
+
+/* เวทีสัดส่วน 16:9 ขยายเต็มจอแบบ cover — ทุกอย่างจึงตรงกับพื้นหลังเสมอ */
+.stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100vw, 177.7778vh);
+  aspect-ratio: 16 / 9;
+  transform: translate(-50%, -50%);
+  background: url("2.png") center / 100% 100% no-repeat;
+  container-type: inline-size;
+}
+
+/* ตัวเลขในกล่อง */
+.value {
+  position: absolute;
+  top: 35.9%;
+  transform: translate(-50%, -50%);
+  font-family: "Comic Sans MS", "Comic Neue", "Chalkboard SE", cursive;
+  font-weight: 700;
+  font-size: 6.1cqw;
+  line-height: 1;
+  color: #000;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Toggle */
+.toggle {
+  position: absolute;
+  width: 9.22cqw;            /* 177px จาก 1920px */
+  aspect-ratio: 177 / 83;
+  border: 0;
+  border-radius: 999px;
+  background: #e5c07b;
+  cursor: pointer;
+  transition: background-color .25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.toggle[aria-checked="true"] { background: #058392; }
+
+.knob {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #b09447;
+  border: max(2px, .16cqw) solid #000;
+  transition: transform .25s ease;
+}
+.toggle[aria-checked="true"] .knob { transform: translateX(113%); }
+
+.toggle:focus-visible {
+  outline: .25cqw solid #e84c30;
+  outline-offset: .25cqw;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle, .knob { transition: none; }
+}

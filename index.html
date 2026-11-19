@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Farm IoT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="stage" aria-label="Smart Farm IoT">
+
+    <!-- ค่าเซนเซอร์ (สุ่มค่า) -->
+    <div class="value" id="v-temp"  style="left:19.27%">25</div>
+    <div class="value" id="v-humid" style="left:39.64%">60</div>
+    <div class="value" id="v-light" style="left:60.73%">100</div>
+    <div class="value" id="v-water" style="left:79.53%">10</div>
+
+    <!-- ปุ่ม toggle -->
+    <button class="toggle" role="switch" aria-checked="false" aria-label="อุณหภูมิ"
+            data-target="v-temp"  style="left:14.69%; top:57.87%"><span class="knob"></span></button>
+    <button class="toggle" role="switch" aria-checked="false" aria-label="ความชื้น"
+            data-target="v-humid" style="left:35.00%; top:57.87%"><span class="knob"></span></button>
+    <button class="toggle" role="switch" aria-checked="false" aria-label="ค่าแสง"
+            data-target="v-light" style="left:55.57%; top:58.52%"><span class="knob"></span></button>
+    <button class="toggle" role="switch" aria-checked="false" aria-label="ระดับน้ำ"
+            data-target="v-water" style="left:74.90%; top:57.87%"><span class="knob"></span></button>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
